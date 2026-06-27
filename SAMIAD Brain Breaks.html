@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)file:///Users/moniqueweweje/Downloads/samiad_brain_breaks.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAMIAD Brain Breaks</title>
+<link rel="stylesheet" href="./SAMIAD Brain Breaks_files/tabler-icons.min.css">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Arial,sans-serif;background:#f5f4f0;padding:16px;color:#2c2c2a}
+  .wrap{max-width:900px;margin:0 auto}
+  h1{font-size:22px;font-weight:700;color:#4A3B9C;margin-bottom:4px}
+  .sub{font-size:14px;color:#888780;margin-bottom:16px}
+  .topbar{display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
+  .search{flex:1;min-width:140px;padding:8px 12px;border:1px solid #d0cece;border-radius:8px;font-size:14px;font-family:Arial,sans-serif;color:#2c2c2a;background:#fff}
+  .search:focus{outline:none;border-color:#4A3B9C}
+  .pills{display:flex;gap:6px;flex-wrap:wrap}
+  .pill{padding:6px 14px;border-radius:20px;border:1px solid #d0cece;background:#fff;color:#5f5e5a;font-size:12px;font-weight:600;cursor:pointer;font-family:Arial,sans-serif}
+  .pill:hover{border-color:#4A3B9C;color:#4A3B9C}
+  .pill.on{background:#4A3B9C;color:#fff;border-color:#4A3B9C}
+  .pill.on.movement{background:#0F6E56;border-color:#0F6E56}
+  .pill.on.game{background:#185FA5;border-color:#185FA5}
+  .pill.on.riddle{background:#854F0B;border-color:#854F0B}
+  .count{font-size:12px;color:#888780;margin-bottom:10px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+  .card{background:#fff;border:1px solid #e0dedd;border-radius:12px;overflow:hidden;transition:border-color .15s}
+  .card:hover{border-color:#4A3B9C}
+  .card-head{padding:12px 14px 8px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+  .card-title{font-size:14px;font-weight:700;color:#2c2c2a;line-height:1.4}
+  .badge{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:10px;white-space:nowrap;flex-shrink:0}
+  .bm{background:#E1F5EE;color:#085041}
+  .bg2{background:#E6F1FB;color:#0C447C}
+  .br{background:#FAEEDA;color:#633806}
+  .meta{display:flex;gap:5px;flex-wrap:wrap;padding:0 14px 8px}
+  .mtag{font-size:11px;color:#888780;background:#f1efe8;border:1px solid #e0dedd;border-radius:8px;padding:2px 8px}
+  .card-body{padding:0 14px 10px;font-size:13px;color:#5f5e5a;line-height:1.65}
+  .steps-wrap{margin:0 14px 10px;background:#f8f7f4;border-radius:8px;padding:10px 12px}
+  .steps-label{font-size:10px;font-weight:700;color:#888780;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+  .steps-body{font-size:12px;color:#5f5e5a;line-height:1.8}
+  .sn{display:inline-flex;width:16px;height:16px;border-radius:50%;background:#4A3B9C;color:#fff;font-size:9px;font-weight:700;align-items:center;justify-content:center;margin-right:5px;vertical-align:middle;flex-shrink:0}
+  .sn.gn{background:#185FA5}
+  .sn.rn{background:#854F0B}
+  .extras{margin-top:8px;font-size:12px;color:#888780;line-height:1.7}
+  .extras strong{color:#5f5e5a}
+  .expand-btn{background:none;border:none;cursor:pointer;color:#888780;font-size:12px;font-family:Arial,sans-serif;display:flex;align-items:center;gap:4px;padding:4px 14px 12px;width:100%}
+  .expand-btn:hover{color:#4A3B9C}
+  .empty{text-align:center;padding:40px;color:#888780;font-size:14px;grid-column:1/-1}
+  .footer{margin-top:20px;text-align:center;font-size:12px;color:#b4b2a9;padding-top:12px;border-top:1px solid #e0dedd}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>🧠 Brain Breaks</h1>
+  <p class="sub">24 ready-to-use activities — movement, games &amp; riddles. Click any card to see how to run it.</p>
+  <div class="topbar">
+    <input class="search" type="text" placeholder="Search activities…" id="q" oninput="render()">
+    <div class="pills">
+      <button class="pill on" data-f="all" onclick="filt(&#39;all&#39;,this)">All</button>
+      <button class="pill movement" data-f="movement" onclick="filt(&#39;movement&#39;,this)">🏃 Movement</button>
+      <button class="pill game" data-f="game" onclick="filt(&#39;game&#39;,this)">🎮 Game</button>
+      <button class="pill riddle" data-f="riddle" onclick="filt(&#39;riddle&#39;,this)">💡 Riddle</button>
+    </div>
+  </div>
+  <div class="count" id="ct">22 activities</div>
+  <div class="grid" id="grid"><div class="card">
+      <div class="card-head">
+        <div class="card-title">Shake it out</div>
+        <span class="badge bm">🏃 Movement</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 2 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Quick full-body reset — shake out hands, arms, legs and head on a 5-second countdown. Teacher leads, gets increasingly silly.</div>
+      
+      <button class="expand-btn" onclick="toggle(0)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Simon says (ESL edition)</div>
+        <span class="badge bm">🏃 Movement</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 5 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Classic Simon Says using target vocabulary from the lesson — turning the game into stealthy grammar and vocabulary practice.</div>
+      
+      <button class="expand-btn" onclick="toggle(1)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Rock paper scissors tournament</div>
+        <span class="badge bm">🏃 Movement</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 5 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Students pair up, play rock paper scissors — the loser becomes a cheerleader for the winner. Energy snowballs as the group shrinks to a dramatic final.</div>
+      
+      <button class="expand-btn" onclick="toggle(2)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Zip zap zop</div>
+        <span class="badge bm">🏃 Movement</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 4 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Students pass an invisible ball of energy around a circle using the words Zip, Zap and Zop — with eye contact and a pointing gesture. Fast and focused.</div>
+      
+      <button class="expand-btn" onclick="toggle(3)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Four on the floor</div>
+        <span class="badge bm">🏃 Movement</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 5 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Students walk around the room. Teacher calls a number — that many body parts must be touching the floor as a group. Forces instant collaboration.</div>
+      
+      <button class="expand-btn" onclick="toggle(4)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Mirror mirror</div>
+        <span class="badge bm">🏃 Movement</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 4 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Pairs face each other — one leads in slow motion, the other mirrors perfectly. Silent, focused and surprisingly hilarious when pushed fast.</div>
+      
+      <button class="expand-btn" onclick="toggle(5)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Countdown challenge</div>
+        <span class="badge bm">🏃 Movement</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 3 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Teacher calls an exercise and a number — students do exactly that many reps as fast as possible. Cycle through silly combinations.</div>
+      
+      <button class="expand-btn" onclick="toggle(6)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Wink murder</div>
+        <span class="badge bm">🏃 Movement</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 7 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">A secret murderer winks at people to "kill" them — victims must die dramatically. Detectives must guess the murderer before running out of chances.</div>
+      
+      <button class="expand-btn" onclick="toggle(7)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">20 questions</div>
+        <span class="badge bg2">🎮 Game</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 5 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Teacher thinks of a person, place or thing — the class asks yes/no questions to identify it. Builds questioning vocabulary at any level.</div>
+      
+      <button class="expand-btn" onclick="toggle(8)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Word tennis</div>
+        <span class="badge bg2">🎮 Game</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 4 min</span>
+        <span class="mtag">Elementary · Intermediate</span>
+      </div>
+      <div class="card-body">Pairs volley words back and forth in a category — no repeating, no hesitating. Faster than it sounds and collapses into giggles quickly.</div>
+      
+      <button class="expand-btn" onclick="toggle(9)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Never have I ever</div>
+        <span class="badge bg2">🎮 Game</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 6 min</span>
+        <span class="mtag">Intermediate · Advanced</span>
+      </div>
+      <div class="card-body">Students hold up 5 fingers. A statement is read — anyone who has done it puts one finger down. Great for present perfect warm-up.</div>
+      
+      <button class="expand-btn" onclick="toggle(10)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Alphabet chain</div>
+        <span class="badge bg2">🎮 Game</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 4 min</span>
+        <span class="mtag">Elementary · Intermediate</span>
+      </div>
+      <div class="card-body">Go around the room — each student says a word in the category starting with the next letter of the alphabet. Fast and adaptable to any vocabulary set.</div>
+      
+      <button class="expand-btn" onclick="toggle(11)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Fortunately unfortunately</div>
+        <span class="badge bg2">🎮 Game</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 5 min</span>
+        <span class="mtag">Intermediate · Advanced</span>
+      </div>
+      <div class="card-body">Build a story where sentences alternate between good news and bad news. Goes around the circle and escalates gloriously.</div>
+      
+      <button class="expand-btn" onclick="toggle(12)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Last letter</div>
+        <span class="badge bg2">🎮 Game</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 4 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Each student says a word starting with the last letter of the previous word. Fires rapidly around the room and gets very fast.</div>
+      
+      <button class="expand-btn" onclick="toggle(13)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Heads down thumbs up</div>
+        <span class="badge bg2">🎮 Game</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 6 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Four students creep around pressing one thumb each — victims guess who touched them. A perfect 5-minute settler for any age.</div>
+      
+      <button class="expand-btn" onclick="toggle(14)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">The price is right</div>
+        <span class="badge bg2">🎮 Game</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 6 min</span>
+        <span class="mtag">Intermediate · Advanced</span>
+      </div>
+      <div class="card-body">Teacher describes an everyday item — students guess the price. Closest without going over wins. Great for money vocabulary and hedging language.</div>
+      
+      <button class="expand-btn" onclick="toggle(15)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Classic riddles round</div>
+        <span class="badge br">💡 Riddle</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 5 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Read 3–4 riddles aloud — students write answers privately, then reveal. First to get all right wins. Great for listening and lateral thinking.</div>
+      
+      <button class="expand-btn" onclick="toggle(16)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Two truths one riddle</div>
+        <span class="badge br">💡 Riddle</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 6 min</span>
+        <span class="mtag">Intermediate · Advanced</span>
+      </div>
+      <div class="card-body">Combine two truths and a lie with a riddle — students must spot the lie AND solve the riddle hidden in the clues to score double points.</div>
+      
+      <button class="expand-btn" onclick="toggle(17)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Lateral thinking puzzles</div>
+        <span class="badge br">💡 Riddle</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 7 min</span>
+        <span class="mtag">Intermediate · Advanced</span>
+      </div>
+      <div class="card-body">Teacher presents a strange scenario — students ask yes/no questions to work out what happened. Great for developing questioning and deductive reasoning.</div>
+      
+      <button class="expand-btn" onclick="toggle(18)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Who am I?</div>
+        <span class="badge br">💡 Riddle</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 6 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">A sticky note is placed on each student's back with a famous person, animal or object. They ask yes/no questions to work out who or what they are.</div>
+      
+      <button class="expand-btn" onclick="toggle(19)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Odd one out</div>
+        <span class="badge br">💡 Riddle</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 4 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Teacher shows 4 words — students identify the odd one out and explain WHY. Every answer is valid if justified well. Sparks great debate.</div>
+      
+      <button class="expand-btn" onclick="toggle(20)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Emoji riddles</div>
+        <span class="badge br">💡 Riddle</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 5 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Write a phrase, film title or idiom in emoji on the board — students race to guess it. Kids love creating their own for classmates to solve.</div>
+      
+      <button class="expand-btn" onclick="toggle(21)">
+        ⌄ Show steps
+      </button>
+    </div></div>
+  <div class="footer">SAMIAD British Summer Schools &nbsp;·&nbsp; Brain Breaks</div>
+</div>
+<script>
+const D=[
+  {t:'movement',title:'Shake it out',time:'2 min',lvl:'All levels',desc:'Quick full-body reset — shake out hands, arms, legs and head on a 5-second countdown. Teacher leads, gets increasingly silly.',steps:['Stand up and push chairs in','Teacher calls: "Shake your hands — 5, 4, 3, 2, 1, STOP"','Progress: wrists → arms → shoulders → whole body → head → everything at once','Final round: freeze in a superhero pose on STOP','Sit down — 30 seconds of silence to feel the difference']},
+  {t:'movement',title:'Simon says (ESL edition)',time:'5 min',lvl:'All levels',desc:'Classic Simon Says using target vocabulary from the lesson — turning the game into stealthy grammar and vocabulary practice.',steps:['Teacher starts as Simon','Use lesson vocabulary: "Simon says touch something blue", "Simon says mime eating pasta"','Tricky versions: "Simon says point to someone taller than you"','After 5 rounds, a confident student takes over as Simon','Last student standing becomes Simon for next class']},
+  {t:'movement',title:'Rock paper scissors tournament',time:'5 min',lvl:'All levels',desc:'Students pair up, play rock paper scissors — the loser becomes a cheerleader for the winner. Energy snowballs as the group shrinks to a dramatic final.',steps:['Every student pairs with the nearest person','Play best of 1 — loser stands behind winner and cheers them on','Winners find new pairs — their cheerleaders come with them','Continue until two "trains" face off with the whole class cheering','Celebrate the champion — everyone gets a round of applause']},
+  {t:'movement',title:'Zip zap zop',time:'4 min',lvl:'All levels',desc:'Students pass an invisible ball of energy around a circle using the words Zip, Zap and Zop — with eye contact and a pointing gesture. Fast and focused.',steps:['Stand in a circle','Teacher starts — makes eye contact, points and says "ZIP"','That student passes it saying "ZAP", next says "ZOP"','Then back to "ZIP" — must stay in order: Zip → Zap → Zop → Zip','Out if: wrong word, hesitation over 2 seconds, or broken eye contact']},
+  {t:'movement',title:'Four on the floor',time:'5 min',lvl:'All levels',desc:'Students walk around the room. Teacher calls a number — that many body parts must be touching the floor as a group. Forces instant collaboration.',steps:['Students walk freely around the room','Teacher shouts a number: "FIVE!"','Students grab the nearest people — get exactly 5 body parts on the floor','Count to 3 — groups who are wrong are out','Numbers get harder: 7, 11, 3… last group standing wins']},
+  {t:'movement',title:'Mirror mirror',time:'4 min',lvl:'All levels',desc:'Pairs face each other — one leads in slow motion, the other mirrors perfectly. Silent, focused and surprisingly hilarious when pushed fast.',steps:['Pair up and face your partner','One person leads — move slowly in any direction','Partner mirrors every movement exactly — aim for no gap','After 90 seconds, switch leader without breaking the flow','Final 30 seconds: no leader — see if pairs sync naturally']},
+  {t:'movement',title:'Countdown challenge',time:'3 min',lvl:'All levels',desc:'Teacher calls an exercise and a number — students do exactly that many reps as fast as possible. Cycle through silly combinations.',steps:['Teacher calls: "10 star jumps — GO!"','Students do them as fast as possible','Next: "7 squats — GO!"','Mix in silly ones: "3 spins on the spot", "5 slow-motion high fives with your neighbour"','Final round is always 1 — build up to it and make it dramatic']},
+  {t:'movement',title:'Wink murder',time:'7 min',lvl:'All levels',desc:'A secret murderer winks at people to "kill" them — victims must die dramatically. Detectives must guess the murderer before running out of chances.',steps:['Students sit or mill around the room','Secretly assign one murderer (tap shoulder or whisper)','Murderer makes eye contact and winks — victim dies dramatically after 5 seconds','Players can accuse — 3 wrong guesses and the murderer wins','Encourage dramatic deaths — best death gets a prize']},
+  {t:'game',title:'20 questions',time:'5 min',lvl:'All levels',desc:'Teacher thinks of a person, place or thing — the class asks yes/no questions to identify it. Builds questioning vocabulary at any level.',steps:['Teacher thinks of something and says the category: "I\'m thinking of an animal"','Students ask yes/no questions: "Is it bigger than a cat?" "Does it live in water?"','Tally questions on the board — 20 max','First correct guess thinks of the next object','Advanced: restrict to abstract nouns or famous people']},
+  {t:'game',title:'Word tennis',time:'4 min',lvl:'Elementary · Intermediate',desc:'Pairs volley words back and forth in a category — no repeating, no hesitating. Faster than it sounds and collapses into giggles quickly.',steps:['Pair up and decide a category: animals, countries, things in a kitchen','Player 1 serves: "Cat"','Player 2 returns: "Elephant" — no hesitation, no repeats','Out if: hesitation over 3 seconds, a repeat, or wrong category','Play 3 sets of 30 seconds — track who wins the most']},
+  {t:'game',title:'Never have I ever',time:'6 min',lvl:'Intermediate · Advanced',desc:'Students hold up 5 fingers. A statement is read — anyone who has done it puts one finger down. Great for present perfect warm-up.',steps:['Everyone holds up 5 fingers','Teacher reads: "Never have I ever eaten sushi"','Students who HAVE done it put one finger down','Students take turns reading statements','First to put all fingers down shouts "OUT" and wins'],extras:'Suggested statements: visited more than 3 countries · watched a film in English · stayed up past 3am · tried a food they hated'},
+  {t:'game',title:'Alphabet chain',time:'4 min',lvl:'Elementary · Intermediate',desc:'Go around the room — each student says a word in the category starting with the next letter of the alphabet. Fast and adaptable to any vocabulary set.',steps:['Choose a category: food, animals, countries, adjectives','Student 1: A — "Apple"','Student 2: B — "Banana" — continue through the alphabet','Skip Q, X, Z if needed','Out if they take more than 4 seconds or repeat a word','Advanced: each word must be used in a full sentence']},
+  {t:'game',title:'Fortunately unfortunately',time:'5 min',lvl:'Intermediate · Advanced',desc:'Build a story where sentences alternate between good news and bad news. Goes around the circle and escalates gloriously.',steps:['Teacher starts: "Fortunately, I found a spaceship in my garden"','Next: "Unfortunately, it was out of fuel"','Next: "Fortunately, the fuel was in the shed"','Alternate strictly: fortunately → unfortunately → fortunately…','Write the story on the board — vote on the best ending']},
+  {t:'game',title:'Last letter',time:'4 min',lvl:'All levels',desc:'Each student says a word starting with the last letter of the previous word. Fires rapidly around the room and gets very fast.',steps:['Choose a topic — or leave open for Advanced','Student 1: "Dog"','Student 2 must start with G: "Giraffe"','Student 3 must start with E: "Elephant"','Out if: hesitation over 3 seconds, word already used, or wrong starting letter']},
+  {t:'game',title:'Heads down thumbs up',time:'6 min',lvl:'All levels',desc:'Four students creep around pressing one thumb each — victims guess who touched them. A perfect 5-minute settler for any age.',steps:['Choose 4 students to be "it" — they stand at the front','Everyone else: heads down on the desk, one thumb up','The 4 creep around and gently press one thumb each','Call "Heads up!" — the 4 pressed students guess who touched them','Correct guess = they swap places. New "it" students each round']},
+  {t:'game',title:'The price is right',time:'6 min',lvl:'Intermediate · Advanced',desc:'Teacher describes an everyday item — students guess the price. Closest without going over wins. Great for money vocabulary and hedging language.',steps:['Teacher describes an item: "A large pizza in London"','Students write their guesses privately','Reveal guesses: "I think it\'s about £12", "I\'d say roughly £15"','Reveal the real price — closest without going over wins','Play 5 rounds — use items from different countries for fun']},
+  {t:'riddle',title:'Classic riddles round',time:'5 min',lvl:'All levels',desc:'Read 3–4 riddles aloud — students write answers privately, then reveal. First to get all right wins. Great for listening and lateral thinking.',steps:['Students have paper and pen ready','Read each riddle clearly and slowly — twice if needed','Students write their guess before you reveal the answer','After all riddles, reveal one by one and tally scores','Play as individuals or teams'],extras:'Sample riddles: I have hands but can\'t clap — what am I? (Clock) · The more you take, the more you leave behind (Footsteps) · What gets wetter the more it dries? (A towel) · I have cities but no houses, mountains but no trees (A map)'},
+  {t:'riddle',title:'Two truths one riddle',time:'6 min',lvl:'Intermediate · Advanced',desc:'Combine two truths and a lie with a riddle — students must spot the lie AND solve the riddle hidden in the clues to score double points.',steps:['Teacher reads 3 statements — 2 true, 1 false','Hidden in the true statements is a clue to a riddle answer','Students identify the lie AND solve the riddle to score double points','Reveal the lie first, then the riddle answer','Students create their own for the next round']},
+  {t:'riddle',title:'Lateral thinking puzzles',time:'7 min',lvl:'Intermediate · Advanced',desc:'Teacher presents a strange scenario — students ask yes/no questions to work out what happened. Great for developing questioning and deductive reasoning.',steps:['Teacher reads the scenario: "A man walks into a bar and asks for water. The barman pulls out a gun. The man says thank you and leaves."','Students ask ONLY yes/no questions','Teacher answers: yes / no / irrelevant / getting warmer','Continue until someone solves it — then reveal and discuss','Let a student read the next scenario'],extras:'Answer to above: the man had hiccups. The gun shock cured them. More lateral thinking puzzles at lateralthinkingpuzzles.com'},
+  {t:'riddle',title:'Who am I?',time:'6 min',lvl:'All levels',desc:'A sticky note is placed on each student\'s back with a famous person, animal or object. They ask yes/no questions to work out who or what they are.',steps:['Write a name or object on a sticky note and stick it on each student\'s back — they cannot look','Students mingle and ask one yes/no question per person: "Am I a real person?" "Am I famous for sport?"','First to guess correctly wins','Keep going until everyone knows who they are','Elementary: use simple animals or jobs. Advanced: use abstract concepts']},
+  {t:'riddle',title:'Odd one out',time:'4 min',lvl:'All levels',desc:'Teacher shows 4 words — students identify the odd one out and explain WHY. Every answer is valid if justified well. Sparks great debate.',steps:['Write 4 words on the board: "Cat · Dog · Table · Hamster"','Students vote on the odd one out — hands up or call out','Ask for justifications — multiple correct answers are valid','The best justification wins — not just the most obvious','Increase challenge: use more abstract word groups'],extras:'Examples: Red · Blue · Heavy · Green (Heavy = not a colour) · Paris · Berlin · Sushi · Tokyo (Sushi = not a city) · Run · Jump · Swim · Banana (Banana = not a verb)'},
+  {t:'riddle',title:'Emoji riddles',time:'5 min',lvl:'All levels',desc:'Write a phrase, film title or idiom in emoji on the board — students race to guess it. Kids love creating their own for classmates to solve.',steps:['Write an emoji sequence on the board','Students call out guesses — first correct answer scores a point','Winning student creates the next emoji sequence','Elementary: simple phrases. Advanced: idioms or film titles','Keep a running tally — highest scorer at end of week wins'],extras:'Examples: 🌊🏄 = surfing · 🎵🎤⭐ = pop star · 🔑🏆 = key to success · 🧊❄️🏃 = ice runner'}
+];
+
+let active='all';
+let open={};
+
+function filt(f,btn){
+  active=f;
+  document.querySelectorAll('.pill').forEach(p=>{p.classList.remove('on');});
+  btn.classList.add('on');
+  render();
+}
+
+function toggle(i){
+  open[i]=!open[i];
+  render();
+}
+
+function render(){
+  const q=document.getElementById('q').value.toLowerCase();
+  const list=D.filter(d=>{
+    const tm=active==='all'||d.t===active;
+    const sm=!q||d.title.toLowerCase().includes(q)||d.desc.toLowerCase().includes(q)||d.lvl.toLowerCase().includes(q);
+    return tm&&sm;
+  });
+  document.getElementById('ct').textContent=list.length+' activities';
+  const g=document.getElementById('grid');
+  if(!list.length){g.innerHTML='<div class="empty">Nothing found — try a different search</div>';return;}
+  const tm={movement:{label:'Movement',bc:'bm',nc:''},game:{label:'Game',bc:'bg2',nc:'gn'},riddle:{label:'Riddle',bc:'br',nc:'rn'}};
+  g.innerHTML=list.map(d=>{
+    const i=D.indexOf(d);
+    const tp=tm[d.t];
+    const isOpen=open[i];
+    const icons={movement:'&#127939;',game:'&#127918;',riddle:'&#128161;'};
+    const stepHtml=d.steps.map((s,n)=>`<span class="sn ${tp.nc}">${n+1}</span>${s}`).join('<br>');
+    const ext=d.extras?`<div class="extras"><strong>Note:</strong> ${d.extras}</div>`:'';
+    return `<div class="card">
+      <div class="card-head">
+        <div class="card-title">${d.title}</div>
+        <span class="badge ${tp.bc}">${icons[d.t]} ${tp.label}</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">&#128336; ${d.time}</span>
+        <span class="mtag">${d.lvl}</span>
+      </div>
+      <div class="card-body">${d.desc}</div>
+      ${isOpen?`<div class="steps-wrap"><div class="steps-label">How to run it</div><div class="steps-body">${stepHtml}</div>${ext}</div>`:''}
+      <button class="expand-btn" onclick="toggle(${i})">
+        ${isOpen?'&#8963; Hide steps':'&#8964; Show steps'}
+      </button>
+    </div>`;
+  }).join('');
+}
+render();
+</script>
+
+
+</body></html>

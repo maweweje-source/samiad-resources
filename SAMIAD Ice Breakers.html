@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)file:///Users/moniqueweweje/Downloads/samiad_ice_breakers.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAMIAD Ice Breakers</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Arial,sans-serif;background:#f5f4f0;padding:16px;color:#2c2c2a}
+  .wrap{max-width:900px;margin:0 auto}
+  h1{font-size:22px;font-weight:700;color:#4A3B9C;margin-bottom:4px}
+  .sub{font-size:14px;color:#888780;margin-bottom:16px}
+  .topbar{display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
+  .search{flex:1;min-width:140px;padding:8px 12px;border:1px solid #d0cece;border-radius:8px;font-size:14px;font-family:Arial,sans-serif;color:#2c2c2a;background:#fff}
+  .search:focus{outline:none;border-color:#4A3B9C}
+  .pills{display:flex;gap:6px;flex-wrap:wrap}
+  .pill{padding:6px 14px;border-radius:20px;border:1px solid #d0cece;background:#fff;color:#5f5e5a;font-size:12px;font-weight:600;cursor:pointer;font-family:Arial,sans-serif}
+  .pill:hover{border-color:#4A3B9C;color:#4A3B9C}
+  .pill.on{background:#4A3B9C;color:#fff;border-color:#4A3B9C}
+  .pill.on.online{background:#185FA5;border-color:#185FA5}
+  .pill.on.movement{background:#0F6E56;border-color:#0F6E56}
+  .pill.on.noprep{background:#854F0B;border-color:#854F0B}
+  .count{font-size:12px;color:#888780;margin-bottom:10px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:10px}
+  .card{background:#fff;border:1px solid #e0dedd;border-radius:12px;overflow:hidden;transition:border-color .15s}
+  .card:hover{border-color:#4A3B9C}
+  .card-head{padding:12px 14px 8px;display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+  .card-title{font-size:14px;font-weight:700;color:#2c2c2a;line-height:1.4}
+  .badge{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:10px;white-space:nowrap;flex-shrink:0}
+  .bo{background:#E6F1FB;color:#0C447C}
+  .bm{background:#E1F5EE;color:#085041}
+  .bn{background:#FAEEDA;color:#633806}
+  .meta{display:flex;gap:5px;flex-wrap:wrap;padding:0 14px 8px}
+  .mtag{font-size:11px;color:#888780;background:#f1efe8;border:1px solid #e0dedd;border-radius:8px;padding:2px 8px}
+  .card-body{padding:0 14px 10px;font-size:13px;color:#5f5e5a;line-height:1.65}
+  .steps-wrap{margin:0 14px 10px;background:#f8f7f4;border-radius:8px;padding:10px 12px}
+  .steps-label{font-size:10px;font-weight:700;color:#888780;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+  .steps-body{font-size:12px;color:#5f5e5a;line-height:1.8}
+  .sn{display:inline-flex;width:16px;height:16px;border-radius:50%;font-size:9px;font-weight:700;align-items:center;justify-content:center;margin-right:5px;vertical-align:middle;flex-shrink:0;color:#fff}
+  .so{background:#185FA5}
+  .sm{background:#0F6E56}
+  .sn2{background:#854F0B}
+  .links-section{margin:8px 14px 0;padding:8px 0 0;border-top:1px solid #e0dedd}
+  .links-label{font-size:10px;font-weight:700;color:#888780;letter-spacing:.08em;text-transform:uppercase;margin-bottom:5px}
+  .link-item{font-size:12px;margin-bottom:4px}
+  .link-item a{color:#185FA5;text-decoration:none}
+  .link-item a:hover{text-decoration:underline}
+  .link-note{color:#888780;font-size:11px}
+  .expand-btn{background:none;border:none;cursor:pointer;color:#888780;font-size:12px;font-family:Arial,sans-serif;display:flex;align-items:center;gap:4px;padding:6px 14px 12px;width:100%}
+  .expand-btn:hover{color:#4A3B9C}
+  .empty{text-align:center;padding:40px;color:#888780;font-size:14px;grid-column:1/-1}
+  .footer{margin-top:20px;text-align:center;font-size:12px;color:#b4b2a9;padding-top:12px;border-top:1px solid #e0dedd}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>❄ Ice Breakers</h1>
+  <p class="sub">20 ready-to-use activities — online, movement &amp; no prep. Click any card for full instructions and links.</p>
+  <div class="topbar">
+    <input class="search" type="text" placeholder="Search activities…" id="q" oninput="render()">
+    <div class="pills">
+      <button class="pill on" data-f="all" onclick="filt(&#39;all&#39;,this)">All</button>
+      <button class="pill online" data-f="online" onclick="filt(&#39;online&#39;,this)">📶 Online</button>
+      <button class="pill movement" data-f="movement" onclick="filt(&#39;movement&#39;,this)">🏃 Movement</button>
+      <button class="pill noprep" data-f="noprep" onclick="filt(&#39;noprep&#39;,this)">⚡ No prep</button>
+    </div>
+  </div>
+  <div class="count" id="ct">20 activities</div>
+  <div class="grid" id="grid"><div class="card">
+      <div class="card-head">
+        <div class="card-title">Mentimeter word cloud</div>
+        <span class="badge bo">📶 Online</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 5 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Students answer an open question on their phones and watch their words appear live on screen. The bigger the word, the more students said it.</div>
+      
+      <button class="expand-btn" onclick="toggle(0)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Kahoot name quiz</div>
+        <span class="badge bo">📶 Online</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 8 min</span>
+        <span class="mtag">Elementary · Intermediate</span>
+      </div>
+      <div class="card-body">Collect one fun fact from each student before class, then build a Kahoot where students race to guess which fact belongs to which classmate.</div>
+      
+      <button class="expand-btn" onclick="toggle(1)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Padlet photo wall</div>
+        <span class="badge bo">📶 Online</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 10 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Each student posts a photo, emoji or GIF on a shared Padlet that represents their personality, weekend or home country.</div>
+      
+      <button class="expand-btn" onclick="toggle(2)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Google Slides selfie gallery</div>
+        <span class="badge bo">📶 Online</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 10 min</span>
+        <span class="mtag">Intermediate · Advanced</span>
+      </div>
+      <div class="card-body">Each student gets one slide on a shared deck to introduce themselves — photo or avatar, name, and three facts (two true, one false).</div>
+      
+      <button class="expand-btn" onclick="toggle(3)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Wheel of Names spotlight</div>
+        <span class="badge bo">📶 Online</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 5 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Spin a digital wheel to pick a student at random, then reveal a fun question they must answer. Fast, fair and surprisingly exciting.</div>
+      
+      <button class="expand-btn" onclick="toggle(4)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Jamboard emoji map</div>
+        <span class="badge bo">📶 Online</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 8 min</span>
+        <span class="mtag">Elementary · Intermediate</span>
+      </div>
+      <div class="card-body">Students place a sticky note on a shared world map showing where they are from, with a fun emoji that represents their home country.</div>
+      
+      <button class="expand-btn" onclick="toggle(5)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Human bingo</div>
+        <span class="badge bm">🏃 Movement</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 10–15 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Students circulate with a bingo grid of descriptions and find classmates who match each square. Forces real conversation and instant class mapping.</div>
+      
+      <button class="expand-btn" onclick="toggle(6)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Four corners</div>
+        <span class="badge bm">🏃 Movement</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 8 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Each corner of the room is a choice or opinion. Teacher reads a question and students physically move to their answer. Zero prep, generates great discussion.</div>
+      
+      <button class="expand-btn" onclick="toggle(7)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Line up!</div>
+        <span class="badge bm">🏃 Movement</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 8 min</span>
+        <span class="mtag">Elementary · Intermediate</span>
+      </div>
+      <div class="card-body">Students arrange themselves in a silent line — no words allowed. Uses only gestures, fingers and miming. Brilliant when students don't yet know each other.</div>
+      
+      <button class="expand-btn" onclick="toggle(8)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Find your pair</div>
+        <span class="badge bm">🏃 Movement</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 6 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Each student is given half of a pair — a word and definition, a country and capital, a question and answer — and must circulate to find their match.</div>
+      
+      <button class="expand-btn" onclick="toggle(9)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Stand up if…</div>
+        <span class="badge bm">🏃 Movement</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 5 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Teacher reads statements and students stand if it applies to them. The fastest, simplest way to learn who's in the room and create shared experience.</div>
+      
+      <button class="expand-btn" onclick="toggle(10)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Two truths and a lie — walk and talk</div>
+        <span class="badge bm">🏃 Movement</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 10 min</span>
+        <span class="mtag">Intermediate · Advanced</span>
+      </div>
+      <div class="card-body">Classic two truths and a lie, made active by pairing students who rotate every 90 seconds. More conversations, more movement, more fun.</div>
+      
+      <button class="expand-btn" onclick="toggle(11)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">One word story</div>
+        <span class="badge bn">⚡ No prep</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 5 min</span>
+        <span class="mtag">Intermediate · Advanced</span>
+      </div>
+      <div class="card-body">Students sit in a circle and build a story together one word at a time. Hilarious, spontaneous and completely unpredictable.</div>
+      
+      <button class="expand-btn" onclick="toggle(12)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Desert island must-haves</div>
+        <span class="badge bn">⚡ No prep</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 8 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Students choose 3 things to take to a desert island and justify why. Sparks vocabulary, debate and personality reveals with no preparation.</div>
+      
+      <button class="expand-btn" onclick="toggle(13)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Favourites lightning round</div>
+        <span class="badge bn">⚡ No prep</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 6 min</span>
+        <span class="mtag">Elementary</span>
+      </div>
+      <div class="card-body">Fast-paced one-word answers fired around the room. Perfect for the first five minutes of an Elementary class — low stakes, high energy.</div>
+      
+      <button class="expand-btn" onclick="toggle(14)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Would you rather</div>
+        <span class="badge bn">⚡ No prep</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 6 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Simple dilemma questions that get everyone talking. No materials needed — just a bank of fun either/or choices adaptable to any level.</div>
+      
+      <button class="expand-btn" onclick="toggle(15)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Name acronym</div>
+        <span class="badge bn">⚡ No prep</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 8 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Each student creates an acronym from their name — each letter describes their personality. Creative, memorable and vocabulary-building.</div>
+      
+      <button class="expand-btn" onclick="toggle(16)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">The last thing I did</div>
+        <span class="badge bn">⚡ No prep</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 8 min</span>
+        <span class="mtag">Elementary · Intermediate</span>
+      </div>
+      <div class="card-body">Students share the last interesting thing they did before camp. Perfect for past tense practice in an authentic, personal context.</div>
+      
+      <button class="expand-btn" onclick="toggle(17)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">10-second draw</div>
+        <span class="badge bn">⚡ No prep</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 8 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Students have exactly 10 seconds to draw something that represents them — no words. Universal, works across all languages and levels.</div>
+      
+      <button class="expand-btn" onclick="toggle(18)">
+        ⌄ Show steps
+      </button>
+    </div><div class="card">
+      <div class="card-head">
+        <div class="card-title">Common ground</div>
+        <span class="badge bn">⚡ No prep</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">🕐 10 min</span>
+        <span class="mtag">All levels</span>
+      </div>
+      <div class="card-body">Groups race to find the most unusual thing they all share in common. The stranger the connection, the more points.</div>
+      
+      <button class="expand-btn" onclick="toggle(19)">
+        ⌄ Show steps
+      </button>
+    </div></div>
+  <div class="footer">SAMIAD British Summer Schools &nbsp;·&nbsp; Ice Breaker Pack</div>
+</div>
+<script>
+const D=[
+  {t:'online',title:'Mentimeter word cloud',time:'5 min',lvl:'All levels',
+    desc:'Students answer an open question on their phones and watch their words appear live on screen. The bigger the word, the more students said it.',
+    steps:['Create a free word cloud at mentimeter.com — no login needed for students','Display the QR code or short URL on the board','Ask: "Type one word that describes you" or "What do you do for fun?"','Watch the cloud build live — read out interesting words','Ask 2–3 students to say one sentence about their word'],
+    links:[{label:'mentimeter.com — create your word cloud',url:'https://www.mentimeter.com',note:'free teacher account'},{label:'menti.com — student join page',url:'https://www.menti.com',note:'students enter the code from the board'}]},
+  {t:'online',title:'Kahoot name quiz',time:'8 min',lvl:'Elementary · Intermediate',
+    desc:'Collect one fun fact from each student before class, then build a Kahoot where students race to guess which fact belongs to which classmate.',
+    steps:['Before class: ask students to write one fun fact about themselves','Build a Kahoot at kahoot.com with each fact as a question and names as answer choices','Launch — students join at kahoot.it or via the app','After each reveal, the student introduces themselves in one sentence','Award bonus points for the funniest or most surprising fact'],
+    links:[{label:'kahoot.com — teacher dashboard',url:'https://kahoot.com',note:'create and host quizzes'},{label:'kahoot.it — student join page',url:'https://kahoot.it',note:'students enter the game PIN here'}]},
+  {t:'online',title:'Padlet photo wall',time:'10 min',lvl:'All levels',
+    desc:'Each student posts a photo, emoji or GIF on a shared Padlet that represents their personality, weekend or home country.',
+    steps:['Create a blank Padlet wall at padlet.com and share the QR code or link','Students post: one photo, emoji or GIF that represents them — 3 minutes','Display the full wall and point to posts at random','Ask "Whose is this?" — that student explains in 1–2 sentences','Leave the Padlet open all week as a living class portrait'],
+    links:[{label:'padlet.com — create a free wall',url:'https://padlet.com',note:'free for up to 3 walls'}]},
+  {t:'online',title:'Google Slides selfie gallery',time:'10 min',lvl:'Intermediate · Advanced',
+    desc:'Each student gets one slide on a shared deck to introduce themselves — photo or avatar, name, and three facts (two true, one false).',
+    steps:['Create a shared Google Slides deck with one template slide per student','Share the link — students add: name, photo/avatar, and 3 facts (2 true, 1 lie)','Give 5 minutes to complete their slide','Present each slide — class guesses the lie (thumbs up = true, thumbs down = lie)','Student confirms the lie and adds one extra sentence about themselves'],
+    links:[{label:'Google Slides — create a shared deck',url:'https://slides.google.com',note:'File > Share > Anyone with link can edit'},{label:'picrew.me — free avatar maker',url:'https://www.picrew.me',note:'if students prefer not to use photos'}]},
+  {t:'online',title:'Wheel of Names spotlight',time:'5 min',lvl:'All levels',
+    desc:'Spin a digital wheel to pick a student at random, then reveal a fun question they must answer. Fast, fair and surprisingly exciting.',
+    steps:['Open wheelofnames.com and add all student first names','Prepare a list of fun questions on a separate slide or card','Spin the wheel — chosen student answers the question currently displayed','That student then spins for the next person','Suggested: "One superpower?", "Last film?", "Coffee or tea?", "Weirdest food tried?"'],
+    links:[{label:'wheelofnames.com — free spinner',url:'https://wheelofnames.com',note:'no account needed — paste names directly'}]},
+  {t:'online',title:'Jamboard emoji map',time:'8 min',lvl:'Elementary · Intermediate',
+    desc:'Students place a sticky note on a shared world map showing where they are from, with a fun emoji that represents their home country.',
+    steps:['Create a Padlet with a world map image as background and share the link','Students add a sticky note on their home country: name + one emoji that represents it','Teacher zooms around the map pointing at notes and asking "Why that emoji?"','Class votes on the most creative emoji choice'],
+    links:[{label:'padlet.com — create a map-style wall',url:'https://padlet.com',note:'recommended alternative to Google Jamboard'}]},
+  {t:'movement',title:'Human bingo',time:'10–15 min',lvl:'All levels',
+    desc:'Students circulate with a bingo grid of descriptions and find classmates who match each square. Forces real conversation and instant class mapping.',
+    steps:['Print or hand-write a 4x4 bingo grid — each square has a description','Adjust vocabulary to level: simple nouns for Elementary, abstract adjectives for Advanced','Students walk around asking yes/no questions to fill their grid','First to complete a row shouts BINGO — they introduce the people they found','Play again for a full house — swap sheets for variety'],
+    links:[{label:'myfreebingocards.com — free bingo card generator',url:'https://myfreebingocards.com/bingo-card-generator',note:'customise and print in seconds'}]},
+  {t:'movement',title:'Four corners',time:'8 min',lvl:'All levels',
+    desc:'Each corner of the room is a choice or opinion. Teacher reads a question and students physically move to their answer. Zero prep, generates great discussion.',
+    steps:['Label the four corners: Strongly agree / Agree / Disagree / Strongly disagree','Read a statement: "Would you rather visit space or the ocean depths?"','Students move to their corner — no talking during movement','Choose one person per corner to explain their choice in a sentence','Advanced: corners become debate positions — must defend with evidence'],
+    links:[{label:'conversationstarters.com — would you rather questions',url:'https://www.conversationstarters.com/would-you-rather-questions/',note:'great for quick questions at any level'}]},
+  {t:'movement',title:'Line up!',time:'8 min',lvl:'Elementary · Intermediate',
+    desc:'Students arrange themselves in a silent line — no words allowed. Uses only gestures, fingers and miming. Brilliant when students don\'t yet know each other.',
+    steps:['Clear a space for a line','Instruction: "Line up by birthday — January at this end, December at the other"','Students may only use gestures and fingers — no speaking in any language','Once lined up, check by asking each person their birthday','Repeat: shoe size, number of siblings, distance travelled to get here'],
+    links:[]},
+  {t:'movement',title:'Find your pair',time:'6 min',lvl:'All levels',
+    desc:'Each student is given half of a pair — a word and definition, a country and capital, a question and answer — and must circulate to find their match.',
+    steps:['Prepare slips of paper in matching pairs relevant to your level and topic','Elementary: word + picture / Intermediate: word + definition / Advanced: word + example sentence','Hand one slip to each student and say Go! — they circulate to find their match','Once paired, each prepares a 20-second introduction','Each pair shares their introduction with the group'],
+    links:[{label:'eslprintables.com — matching cards by level',url:'https://www.eslprintables.com/vocabulary_worksheets/games_and_activities/matching/',note:'search by level and topic'}]},
+  {t:'movement',title:'Stand up if…',time:'5 min',lvl:'All levels',
+    desc:'Teacher reads statements and students stand if it applies to them. The fastest, simplest way to learn who\'s in the room and create shared experience.',
+    steps:['Students sit at desks or in a circle','Teacher reads: "Stand up if you have a pet" — students stand, make eye contact, sit back down','After 2–3 rounds, hand statement cards to a confident student to lead','Increase complexity: start with facts, move to opinions and experiences','Finish with: "Stand up if you\'re excited about this camp" — always ends on a high'],
+    links:[]},
+  {t:'movement',title:'Two truths and a lie — walk and talk',time:'10 min',lvl:'Intermediate · Advanced',
+    desc:'Classic two truths and a lie, made active by pairing students who rotate every 90 seconds. More conversations, more movement, more fun.',
+    steps:['Each student writes 3 statements (2 true, 1 false) on a slip of paper','Students walk around — when teacher claps, they pair with the nearest person','Each shares their 3 statements; partner guesses the lie in 30 seconds','Clap again — students move to a new partner','After 4–5 rounds, share the best/trickiest lies with the whole group'],
+    links:[]},
+  {t:'noprep',title:'One word story',time:'5 min',lvl:'Intermediate · Advanced',
+    desc:'Students sit in a circle and build a story together one word at a time. Hilarious, spontaneous and completely unpredictable.',
+    steps:['Sit in a circle — or go around the room in rows','Teacher starts: "Once…" — next student adds one word: "upon…"','Continue: one word each, no hesitation allowed','Out if they take more than 3 seconds — new story begins','Write the best stories on the board — celebrate the most absurd endings'],
+    links:[]},
+  {t:'noprep',title:'Desert island must-haves',time:'8 min',lvl:'All levels',
+    desc:'Students choose 3 things to take to a desert island and justify why. Sparks vocabulary, debate and personality reveals with no preparation.',
+    steps:['Give 2 minutes to think of 3 items — phones allowed for vocabulary help','Go around the group: each person names their three items without explaining','Others guess which item is most important to that person','Student confirms and explains in 2–3 sentences','Advanced: students must persuade the class their list is the most practical'],
+    links:[]},
+  {t:'noprep',title:'Favourites lightning round',time:'6 min',lvl:'Elementary',
+    desc:'Fast-paced one-word answers fired around the room. Perfect for the first five minutes of an Elementary class — low stakes, high energy.',
+    steps:['Students sit in a circle or rows','Teacher points and fires questions: "Favourite colour?" "Favourite food?" "Dog or cat?"','Student answers in one word — full sentences not required at this level','Increase speed as students get comfortable — make it feel like a game show','Write interesting answers on the board for a follow-up memory game'],
+    links:[{label:'eslprintables.com — conversation starters',url:'https://www.eslprintables.com/conversation_worksheets/icebreakers/',note:'free printable conversation cards'}]},
+  {t:'noprep',title:'Would you rather',time:'6 min',lvl:'All levels',
+    desc:'Simple dilemma questions that get everyone talking. No materials needed — just a bank of fun either/or choices adaptable to any level.',
+    steps:['Teacher asks: "Would you rather be able to fly OR be invisible?"','Students vote by raising hands or moving to a side of the room','Ask 2–3 students on each side to explain their reasoning','Let a confident student ask the next question','Advanced: students create their own dilemma and explain both sides'],
+    links:[{label:'conversationstarters.world — would you rather questions',url:'https://conversationstarters.world/would-you-rather/',note:'hundreds of questions by category'}]},
+  {t:'noprep',title:'Name acronym',time:'8 min',lvl:'All levels',
+    desc:'Each student creates an acronym from their name — each letter describes their personality. Creative, memorable and vocabulary-building.',
+    steps:['Teacher models: "My name is ANA — Artistic, Noisy, Adventurous"','Give 2 minutes to create an acronym — students may use phones to find adjectives','Elementary: just the first letter — one adjective only','Intermediate/Advanced: every letter plus an example sentence for one adjective','Share around the room — class guesses one example for each person'],
+    links:[{label:'englishclub.com — adjective word lists by level',url:'https://www.englishclub.com/vocabulary/adjectives-list.php',note:'great reference for students'}]},
+  {t:'noprep',title:'The last thing I did',time:'8 min',lvl:'Elementary · Intermediate',
+    desc:'Students share the last interesting thing they did before camp. Perfect for past tense practice in an authentic, personal context.',
+    steps:['Teacher models: "The last interesting thing I did was visit my grandmother in Scotland"','Give 1 minute to think — students can use phone photos as memory aids','Go around the group: each student says one sentence','Class asks one follow-up question after each student speaks','Write recurring vocabulary and tenses on the board as they arise'],
+    links:[]},
+  {t:'noprep',title:'10-second draw',time:'8 min',lvl:'All levels',
+    desc:'Students have exactly 10 seconds to draw something that represents them — no words. Universal, works across all languages and levels.',
+    steps:['Everyone gets a piece of paper (or uses their phone notepad)','Teacher says: "Draw something that tells us about your personality — 10 seconds"','Count down loudly — shout STOP at zero, pens down','Students hold up drawings — one person at a time explains what they drew and why','Class asks one question each'],
+    links:[]},
+  {t:'noprep',title:'Common ground',time:'10 min',lvl:'All levels',
+    desc:'Groups race to find the most unusual thing they all share in common. The stranger the connection, the more points.',
+    steps:['Put students in groups of 3–4','Goal: find 5 things everyone in the group has in common — the more specific the better','Scoring: "We all like music" = 0 points / "We all hate the smell of petrol" = 3 points','Groups have 5 minutes — then share their best discovery','Class votes on the most surprising common ground'],
+    links:[]}
+];
+
+let active='all';
+let open={};
+
+function filt(f,btn){
+  active=f;
+  document.querySelectorAll('.pill').forEach(p=>p.classList.remove('on'));
+  btn.classList.add('on');
+  render();
+}
+
+function toggle(i){
+  open[i]=!open[i];
+  render();
+}
+
+function render(){
+  const q=document.getElementById('q').value.toLowerCase();
+  const list=D.filter(d=>{
+    const tm=active==='all'||d.t===active;
+    const sm=!q||d.title.toLowerCase().includes(q)||d.desc.toLowerCase().includes(q)||d.lvl.toLowerCase().includes(q);
+    return tm&&sm;
+  });
+  document.getElementById('ct').textContent=list.length+' activities';
+  const g=document.getElementById('grid');
+  if(!list.length){g.innerHTML='<div class="empty">Nothing found — try a different search</div>';return;}
+  const tm={
+    online:{label:'Online',bc:'bo',nc:'so',icon:'&#128246;'},
+    movement:{label:'Movement',bc:'bm',nc:'sm',icon:'&#127939;'},
+    noprep:{label:'No prep',bc:'bn',nc:'sn2',icon:'&#9889;'}
+  };
+  g.innerHTML=list.map(d=>{
+    const i=D.indexOf(d);
+    const tp=tm[d.t];
+    const isOpen=open[i];
+    const stepHtml=d.steps.map((s,n)=>`<span class="sn ${tp.nc}">${n+1}</span>${s}`).join('<br>');
+    const linkHtml=d.links&&d.links.length?`<div class="links-section"><div class="links-label">&#128279; Links</div>${d.links.map(l=>`<div class="link-item"><a href="${l.url}" target="_blank">${l.label}</a>${l.note?` <span class="link-note">— ${l.note}</span>`:''}</div>`).join('')}</div>`:'';
+    return `<div class="card">
+      <div class="card-head">
+        <div class="card-title">${d.title}</div>
+        <span class="badge ${tp.bc}">${tp.icon} ${tp.label}</span>
+      </div>
+      <div class="meta">
+        <span class="mtag">&#128336; ${d.time}</span>
+        <span class="mtag">${d.lvl}</span>
+      </div>
+      <div class="card-body">${d.desc}</div>
+      ${isOpen?`<div class="steps-wrap"><div class="steps-label">How to run it</div><div class="steps-body">${stepHtml}</div></div>${linkHtml}`:''}
+      <button class="expand-btn" onclick="toggle(${i})">
+        ${isOpen?'&#8963; Hide steps':'&#8964; Show steps'}
+      </button>
+    </div>`;
+  }).join('');
+}
+render();
+</script>
+
+
+</body></html>
